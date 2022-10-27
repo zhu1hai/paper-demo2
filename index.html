@@ -1,0 +1,475 @@
+<html><head>
+    <meta charset="UTF-8">
+    <title>Audio samples from "Semi-supervised Generative Modeling for Controllable End-to-end Text-to-Speech and Voice Conversion"</title>
+  </head>
+    <article>
+      <header>
+        <h1>Audio samples from "Semi-supervised Generative Modeling for Controllable End-to-end Text-to-Speech and Voice Conversion"</h1>
+      </header>
+    </article>
+
+    <p><b>Authors</b>: Hai Zhu, Huayi Zhan, Hong Cheng, Ying Wu </p>
+
+    <div><b>Abstract:</b>
+        <br> Speech synthesis (text to speech, TTS) and conversion (voice conversion, VC) are important speech tasks and have made great progress due to the development of deep learning.
+        This paper proposes a controllable end-to-end TTS-VC approach by constructing a space of disentangled representations of linguistic information, speaker identity information, and latent attribute information.
+        By providing partial supervision, we can reliably discover and control important but rarely labeled attribute (such as emotion) in the speech.
+        We can demonstrate that as little as 1% (about 2 minutes) of supervision can be sufficient to control emotional styles.
+        Experimental results show that our proposed model achieves extraordinary performance and consistently outperforms both TTS and VC baseline frameworks.<br><br>
+    </div>
+
+    <p class="toc_title">Contents</p>
+    <div id="toc_container">
+    <ul>
+      <li><a href="#tts">Text to speech</a></li>
+      <li><a href="#vc">Voice conversion</a></li>
+    </ul>
+    </div>
+
+    <p>&nbsp;</p>
+      <div>
+      We use the Mandarin corpus from Emotional Speech Dataset (ESD) for training our models. 
+      This dataset is spoken by 10 native Mandarin speakers and consists of 350 parallel utterances with an average duration of 2.9 seconds. 
+      The audio format is 16-bit PCM with a sample rate of 16 kHz. 
+      We resample the sample rate to 22 kHz. 
+      The text format is the character, which we converted into phonemes through pypinyin toolkit, and we carefully proofread the conversion results manually. 
+      The data set consists of 5 male and 5 female speakers. For each speaker, the corpus consists of five emotions as follows: happy, sad, neutral, angry, and surprise. 
+      We split the corpus for a speaker into a training set (300 samples), a validation set (30 samples), and a test set (20 samples).
+      
+
+      <a name="tts"><h2>Text to speech</h2></a>
+      <a name="tts.sample"><h3>Neutral</h3></a>
+       <table>
+        <tbody>
+        <tr>
+            <td nowrap=""></td>
+            <td align="center"><div class="text_gst">Text: 我告退了，晚上回去拍给你。</div></td>
+            <td align="center"><div class="text_gst">Text: 你知道我很努力的在戒酒。</div></td>
+            <td align="center"><div class="text_gst">Text: 我是基于人工智能系统被创造的。</div></td>
+            <td align="center"><div class="text_gst">Text: 它实际会形成一氧化碳。</div></td>
+        </tr>
+        <tr>
+          <td nowrap="">Reference</td>
+          <td><audio controls=""><source src="Neutral/reference_0.wav"></audio></td>
+          <td><audio controls=""><source src="Neutral/reference_1.wav"></audio></td>
+          <td><audio controls=""><source src="Neutral/reference_2.wav"></audio></td>
+          <td><audio controls=""><source src="Neutral/reference_3.wav"></audio></td>
+        <tr>
+        <tr>
+          <td nowrap="">EMO-VITS</td>
+          <td><audio controls=""><source src="Neutral/baseline_0.wav"></audio></td>
+          <td><audio controls=""><source src="Neutral/baseline_1.wav"></audio></td>
+          <td><audio controls=""><source src="Neutral/baseline_2.wav"></audio></td>
+          <td><audio controls=""><source src="Neutral/baseline_3.wav"></audio></td>
+        </tr>
+        <tr>
+          <td nowrap="">Proposed-TTS (10% supervision)</td>
+          <td><audio controls=""><source src="Neutral/proposal_0.wav"></audio></td>
+          <td><audio controls=""><source src="Neutral/proposal_1.wav"></audio></td>
+          <td><audio controls=""><source src="Neutral/proposal_2.wav"></audio></td>
+          <td><audio controls=""><source src="Neutral/proposal_3.wav"></audio></td>
+        </tr>
+      </tbody></table>
+
+      <a name="tts.sample"><h3>Happy</h3></a>
+       <table>
+        <tbody>
+        <tr>
+            <td nowrap=""></td>
+            <td align="center"><div class="text_gst">Text: 跳舞好难呀，我还正在练基本功。</div></td>
+            <td align="center"><div class="text_gst">Text: 一点也不差，先把握好现在吧。</div></td>
+            <td align="center"><div class="text_gst">Text: 以后不要喝那么多了，伤身体。</div></td>
+            <td align="center"><div class="text_gst">Text: 只要是我能玩儿好的，我都喜欢。</div></td>
+        </tr>
+        <tr>
+          <td nowrap="">Reference</td>
+          <td><audio controls=""><source src="Happy/reference_0.wav"></audio></td>
+          <td><audio controls=""><source src="Happy/reference_1.wav"></audio></td>
+          <td><audio controls=""><source src="Happy/reference_2.wav"></audio></td>
+          <td><audio controls=""><source src="Happy/reference_3.wav"></audio></td>
+        <tr>
+        <tr>
+          <td nowrap="">EMO-VITS</td>
+          <td><audio controls=""><source src="Happy/baseline_0.wav"></audio></td>
+          <td><audio controls=""><source src="Happy/baseline_1.wav"></audio></td>
+          <td><audio controls=""><source src="Happy/baseline_2.wav"></audio></td>
+          <td><audio controls=""><source src="Happy/baseline_3.wav"></audio></td>
+        </tr>
+        <tr>
+          <td nowrap="">Proposed-TTS (10% supervision)</td>
+          <td><audio controls=""><source src="Happy/proposal_0.wav"></audio></td>
+          <td><audio controls=""><source src="Happy/proposal_1.wav"></audio></td>
+          <td><audio controls=""><source src="Happy/proposal_2.wav"></audio></td>
+          <td><audio controls=""><source src="Happy/proposal_3.wav"></audio></td>
+        </tr>
+      </tbody></table>
+
+      <a name="tts.sample"><h3>Sad</h3></a>
+       <table>
+        <tbody>
+        <tr>
+            <td nowrap=""></td>
+            <td align="center"><div class="text_gst">Text: 跳舞好难呀，我还正在练基本功。</div></td>
+            <td align="center"><div class="text_gst">Text: 我应该给女朋友买玫瑰花的。</div></td>
+            <td align="center"><div class="text_gst">Text: 我肯定会的，那以后我不问了。</div></td>
+            <td align="center"><div class="text_gst">Text: 你深深的印在我的脑海里。</div></td>
+        </tr>
+        <tr>
+          <td nowrap="">Reference</td>
+          <td><audio controls=""><source src="Sad/reference_0.wav"></audio></td>
+          <td><audio controls=""><source src="Sad/reference_1.wav"></audio></td>
+          <td><audio controls=""><source src="Sad/reference_2.wav"></audio></td>
+          <td><audio controls=""><source src="Sad/reference_3.wav"></audio></td>
+        <tr>
+        <tr>
+          <td nowrap="">EMO-VITS</td>
+          <td><audio controls=""><source src="Sad/baseline_0.wav"></audio></td>
+          <td><audio controls=""><source src="Sad/baseline_1.wav"></audio></td>
+          <td><audio controls=""><source src="Sad/baseline_2.wav"></audio></td>
+          <td><audio controls=""><source src="Sad/baseline_3.wav"></audio></td>
+        </tr>
+        <tr>
+          <td nowrap="">Proposed-TTS (10% supervision)</td>
+          <td><audio controls=""><source src="Sad/proposal_0.wav"></audio></td>
+          <td><audio controls=""><source src="Sad/proposal_1.wav"></audio></td>
+          <td><audio controls=""><source src="Sad/proposal_2.wav"></audio></td>
+          <td><audio controls=""><source src="Sad/proposal_3.wav"></audio></td>
+        </tr>
+      </tbody></table>
+
+      <a name="tts.sample"><h3>Angry</h3></a>
+       <table>
+        <tbody>
+        <tr>
+            <td nowrap=""></td>
+            <td align="center"><div class="text_gst">Text: 以后不要喝那么多了，伤身体。</div></td>
+            <td align="center"><div class="text_gst">Text: 一点也不差，先把握好现在吧。</div></td>
+            <td align="center"><div class="text_gst">Text: 我应该给女朋友买玫瑰花的。</div></td>
+            <td align="center"><div class="text_gst">Text: 心动不如行动，我不太擅长卖萌。</div></td>
+        </tr>
+        <tr>
+          <td nowrap="">Reference</td>
+          <td><audio controls=""><source src="Angry/reference_0.wav"></audio></td>
+          <td><audio controls=""><source src="Angry/reference_1.wav"></audio></td>
+          <td><audio controls=""><source src="Angry/reference_2.wav"></audio></td>
+          <td><audio controls=""><source src="Angry/reference_3.wav"></audio></td>
+        <tr>
+        <tr>
+          <td nowrap="">EMO-VITS</td>
+          <td><audio controls=""><source src="Angry/baseline_0.wav"></audio></td>
+          <td><audio controls=""><source src="Angry/baseline_1.wav"></audio></td>
+          <td><audio controls=""><source src="Angry/baseline_2.wav"></audio></td>
+          <td><audio controls=""><source src="Angry/baseline_3.wav"></audio></td>
+        </tr>
+        <tr>
+          <td nowrap="">Proposed-TTS (10% supervision)</td>
+          <td><audio controls=""><source src="Angry/proposal_0.wav"></audio></td>
+          <td><audio controls=""><source src="Angry/proposal_1.wav"></audio></td>
+          <td><audio controls=""><source src="Angry/proposal_2.wav"></audio></td>
+          <td><audio controls=""><source src="Angry/proposal_3.wav"></audio></td>
+        </tr>
+      </tbody></table>
+
+      <a name="tts.sample"><h3>Surprise</h3></a>
+       <table>
+        <tbody>
+        <tr>
+            <td nowrap=""></td>
+            <td align="center"><div class="text_gst">Text: 它实际会形成一氧化碳。</div></td>
+            <td align="center"><div class="text_gst">Text: 下个月我姐姐要结婚了。</div></td>
+            <td align="center"><div class="text_gst">Text: 坐地铁只需要大约二十分钟。</div></td>
+            <td align="center"><div class="text_gst">Text: 心动，不如行动，我不太擅长卖萌。</div></td>
+        </tr>
+        <tr>
+          <td nowrap="">Reference</td>
+          <td><audio controls=""><source src="Surprise/reference_0.wav"></audio></td>
+          <td><audio controls=""><source src="Surprise/reference_1.wav"></audio></td>
+          <td><audio controls=""><source src="Surprise/reference_2.wav"></audio></td>
+          <td><audio controls=""><source src="Surprise/reference_3.wav"></audio></td>
+        <tr>
+        <tr>
+          <td nowrap="">EMO-VITS</td>
+          <td><audio controls=""><source src="Surprise/baseline_0.wav"></audio></td>
+          <td><audio controls=""><source src="Surprise/baseline_1.wav"></audio></td>
+          <td><audio controls=""><source src="Surprise/baseline_2.wav"></audio></td>
+          <td><audio controls=""><source src="Surprise/baseline_3.wav"></audio></td>
+        </tr>
+        <tr>
+          <td nowrap="">Proposed-TTS (10% supervision)</td>
+          <td><audio controls=""><source src="Surprise/proposal_0.wav"></audio></td>
+          <td><audio controls=""><source src="Surprise/proposal_1.wav"></audio></td>
+          <td><audio controls=""><source src="Surprise/proposal_2.wav"></audio></td>
+          <td><audio controls=""><source src="Surprise/proposal_3.wav"></audio></td>
+        </tr>
+      </tbody></table>
+
+      <p>&nbsp;</p>
+
+      <a name="vc"><h2>Voice conversion</h2></a>
+      <a name="vc.sample"><h3>female-to-female</h3></a>
+       <table>
+        <tbody>
+        <tr>
+          <td nowrap="">Source</td>
+          <td><audio controls=""><source src="F-F/source_0.wav"></audio></td>
+          <td><audio controls=""><source src="F-F/source_1.wav"></audio></td>
+          <td><audio controls=""><source src="F-F/source_2.wav"></audio></td>
+          <td><audio controls=""><source src="F-F/source_3.wav"></audio></td>
+        <tr>
+        <tr>
+          <td nowrap="">Target</td>
+          <td><audio controls=""><source src="F-F/target_0.wav"></audio></td>
+          <td><audio controls=""><source src="F-F/target_1.wav"></audio></td>
+          <td><audio controls=""><source src="F-F/target_2.wav"></audio></td>
+          <td><audio controls=""><source src="F-F/target_3.wav"></audio></td>
+        </tr>
+        <tr>
+          <td nowrap="">PPG-VC</td>
+          <td><audio controls=""><source src="F-F/baseline_0.wav"></audio></td>
+          <td><audio controls=""><source src="F-F/baseline_1.wav"></audio></td>
+          <td><audio controls=""><source src="F-F/baseline_2.wav"></audio></td>
+          <td><audio controls=""><source src="F-F/baseline_3.wav"></audio></td>
+        </tr>
+        <tr>
+          <td nowrap="">Proposed-VC (10% supervision)</td>
+          <td><audio controls=""><source src="F-F/proposal_0.wav"></audio></td>
+          <td><audio controls=""><source src="F-F/proposal_1.wav"></audio></td>
+          <td><audio controls=""><source src="F-F/proposal_2.wav"></audio></td>
+          <td><audio controls=""><source src="F-F/proposal_3.wav"></audio></td>
+        </tr>
+      </tbody></table>
+
+      <a name="vc.sample"><h3>male-to-male</h3></a>
+       <table>
+        <tbody>
+        <tr>
+          <td nowrap="">Source</td>
+          <td><audio controls=""><source src="M-M/source_0.wav"></audio></td>
+          <td><audio controls=""><source src="M-M/source_1.wav"></audio></td>
+          <td><audio controls=""><source src="M-M/source_2.wav"></audio></td>
+          <td><audio controls=""><source src="M-M/source_3.wav"></audio></td>
+        <tr>
+        <tr>
+          <td nowrap="">Target</td>
+          <td><audio controls=""><source src="M-M/target_0.wav"></audio></td>
+          <td><audio controls=""><source src="M-M/target_1.wav"></audio></td>
+          <td><audio controls=""><source src="M-M/target_2.wav"></audio></td>
+          <td><audio controls=""><source src="M-M/target_3.wav"></audio></td>
+        </tr>
+        <tr>
+          <td nowrap="">PPG-VC</td>
+          <td><audio controls=""><source src="M-M/baseline_0.wav"></audio></td>
+          <td><audio controls=""><source src="M-M/baseline_1.wav"></audio></td>
+          <td><audio controls=""><source src="M-M/baseline_2.wav"></audio></td>
+          <td><audio controls=""><source src="M-M/baseline_3.wav"></audio></td>
+        </tr>
+        <tr>
+          <td nowrap="">Proposed-VC (10% supervision)</td>
+          <td><audio controls=""><source src="M-M/proposal_0.wav"></audio></td>
+          <td><audio controls=""><source src="M-M/proposal_1.wav"></audio></td>
+          <td><audio controls=""><source src="M-M/proposal_2.wav"></audio></td>
+          <td><audio controls=""><source src="M-M/proposal_3.wav"></audio></td>
+        </tr>
+      </tbody></table>
+
+      <a name="vc.sample"><h3>female-to-male</h3></a>
+       <table>
+        <tbody>
+        <tr>
+          <td nowrap="">Source</td>
+          <td><audio controls=""><source src="F-M/source_0.wav"></audio></td>
+          <td><audio controls=""><source src="F-M/source_1.wav"></audio></td>
+          <td><audio controls=""><source src="F-M/source_2.wav"></audio></td>
+          <td><audio controls=""><source src="F-M/source_3.wav"></audio></td>
+        <tr>
+        <tr>
+          <td nowrap="">Target</td>
+          <td><audio controls=""><source src="F-M/target_0.wav"></audio></td>
+          <td><audio controls=""><source src="F-M/target_1.wav"></audio></td>
+          <td><audio controls=""><source src="F-M/target_2.wav"></audio></td>
+          <td><audio controls=""><source src="F-M/target_3.wav"></audio></td>
+        </tr>
+        <tr>
+          <td nowrap="">PPG-VC</td>
+          <td><audio controls=""><source src="F-M/baseline_0.wav"></audio></td>
+          <td><audio controls=""><source src="F-M/baseline_1.wav"></audio></td>
+          <td><audio controls=""><source src="F-M/baseline_2.wav"></audio></td>
+          <td><audio controls=""><source src="F-M/baseline_3.wav"></audio></td>
+        </tr>
+        <tr>
+          <td nowrap="">Proposed-VC (10% supervision)</td>
+          <td><audio controls=""><source src="F-M/proposal_0.wav"></audio></td>
+          <td><audio controls=""><source src="F-M/proposal_1.wav"></audio></td>
+          <td><audio controls=""><source src="F-M/proposal_2.wav"></audio></td>
+          <td><audio controls=""><source src="F-M/proposal_3.wav"></audio></td>
+        </tr>
+      </tbody></table>
+
+      <a name="vc.sample"><h3>male-to-female</h3></a>
+       <table>
+        <tbody>
+        <tr>
+          <td nowrap="">Source</td>
+          <td><audio controls=""><source src="M-F/source_0.wav"></audio></td>
+          <td><audio controls=""><source src="M-F/source_1.wav"></audio></td>
+          <td><audio controls=""><source src="M-F/source_2.wav"></audio></td>
+          <td><audio controls=""><source src="M-F/source_3.wav"></audio></td>
+        <tr>
+        <tr>
+          <td nowrap="">Target</td>
+          <td><audio controls=""><source src="M-F/target_0.wav"></audio></td>
+          <td><audio controls=""><source src="M-F/target_1.wav"></audio></td>
+          <td><audio controls=""><source src="M-F/target_2.wav"></audio></td>
+          <td><audio controls=""><source src="M-F/target_3.wav"></audio></td>
+        </tr>
+        <tr>
+          <td nowrap="">PPG-VC</td>
+          <td><audio controls=""><source src="M-F/baseline_0.wav"></audio></td>
+          <td><audio controls=""><source src="M-F/baseline_1.wav"></audio></td>
+          <td><audio controls=""><source src="M-F/baseline_2.wav"></audio></td>
+          <td><audio controls=""><source src="M-F/baseline_3.wav"></audio></td>
+        </tr>
+        <tr>
+          <td nowrap="">Proposed-VC (10% supervision)</td>
+          <td><audio controls=""><source src="M-F/proposal_0.wav"></audio></td>
+          <td><audio controls=""><source src="M-F/proposal_1.wav"></audio></td>
+          <td><audio controls=""><source src="M-F/proposal_2.wav"></audio></td>
+          <td><audio controls=""><source src="M-F/proposal_3.wav"></audio></td>
+        </tr>
+      </tbody></table>
+
+      <a name="vc.sample"><h3>neutral-to-happy</h3></a>
+       <table>
+        <tbody>
+        <tr>
+          <td nowrap="">Source</td>
+          <td><audio controls=""><source src="N-H/source_0.wav"></audio></td>
+          <td><audio controls=""><source src="N-H/source_1.wav"></audio></td>
+          <td><audio controls=""><source src="N-H/source_2.wav"></audio></td>
+          <td><audio controls=""><source src="N-H/source_3.wav"></audio></td>
+        <tr>
+        <tr>
+          <td nowrap="">Target</td>
+          <td><audio controls=""><source src="N-H/target_0.wav"></audio></td>
+          <td><audio controls=""><source src="N-H/target_1.wav"></audio></td>
+          <td><audio controls=""><source src="N-H/target_2.wav"></audio></td>
+          <td><audio controls=""><source src="N-H/target_3.wav"></audio></td>
+        </tr>
+        <tr>
+          <td nowrap="">PPG-VC</td>
+          <td><audio controls=""><source src="N-H/baseline_0.wav"></audio></td>
+          <td><audio controls=""><source src="N-H/baseline_1.wav"></audio></td>
+          <td><audio controls=""><source src="N-H/baseline_2.wav"></audio></td>
+          <td><audio controls=""><source src="N-H/baseline_3.wav"></audio></td>
+        </tr>
+        <tr>
+          <td nowrap="">Proposed-VC (10% supervision)</td>
+          <td><audio controls=""><source src="N-H/proposal_0.wav"></audio></td>
+          <td><audio controls=""><source src="N-H/proposal_1.wav"></audio></td>
+          <td><audio controls=""><source src="N-H/proposal_2.wav"></audio></td>
+          <td><audio controls=""><source src="N-H/proposal_3.wav"></audio></td>
+        </tr>
+      </tbody></table>
+
+      <a name="vc.sample"><h3>neutral-to-sad</h3></a>
+       <table>
+        <tbody>
+        <tr>
+          <td nowrap="">Source</td>
+          <td><audio controls=""><source src="N-S1/source_0.wav"></audio></td>
+          <td><audio controls=""><source src="N-S1/source_1.wav"></audio></td>
+          <td><audio controls=""><source src="N-S1/source_2.wav"></audio></td>
+          <td><audio controls=""><source src="N-S1/source_3.wav"></audio></td>
+        <tr>
+        <tr>
+          <td nowrap="">Target</td>
+          <td><audio controls=""><source src="N-S1/target_0.wav"></audio></td>
+          <td><audio controls=""><source src="N-S1/target_1.wav"></audio></td>
+          <td><audio controls=""><source src="N-S1/target_2.wav"></audio></td>
+          <td><audio controls=""><source src="N-S1/target_3.wav"></audio></td>
+        </tr>
+        <tr>
+          <td nowrap="">PPG-VC</td>
+          <td><audio controls=""><source src="N-S1/baseline_0.wav"></audio></td>
+          <td><audio controls=""><source src="N-S1/baseline_1.wav"></audio></td>
+          <td><audio controls=""><source src="N-S1/baseline_2.wav"></audio></td>
+          <td><audio controls=""><source src="N-S1/baseline_3.wav"></audio></td>
+        </tr>
+        <tr>
+          <td nowrap="">Proposed-VC (10% supervision)</td>
+          <td><audio controls=""><source src="N-S1/proposal_0.wav"></audio></td>
+          <td><audio controls=""><source src="N-S1/proposal_1.wav"></audio></td>
+          <td><audio controls=""><source src="N-S1/proposal_2.wav"></audio></td>
+          <td><audio controls=""><source src="N-S1/proposal_3.wav"></audio></td>
+        </tr>
+      </tbody></table>
+
+      <a name="vc.sample"><h3>neutral-to-surprise</h3></a>
+       <table>
+        <tbody>
+        <tr>
+          <td nowrap="">Source</td>
+          <td><audio controls=""><source src="N-S2/source_0.wav"></audio></td>
+          <td><audio controls=""><source src="N-S2/source_1.wav"></audio></td>
+          <td><audio controls=""><source src="N-S2/source_2.wav"></audio></td>
+          <td><audio controls=""><source src="N-S2/source_3.wav"></audio></td>
+        <tr>
+        <tr>
+          <td nowrap="">Target</td>
+          <td><audio controls=""><source src="N-S2/target_0.wav"></audio></td>
+          <td><audio controls=""><source src="N-S2/target_1.wav"></audio></td>
+          <td><audio controls=""><source src="N-S2/target_2.wav"></audio></td>
+          <td><audio controls=""><source src="N-S2/target_3.wav"></audio></td>
+        </tr>
+        <tr>
+          <td nowrap="">PPG-VC</td>
+          <td><audio controls=""><source src="N-S2/baseline_0.wav"></audio></td>
+          <td><audio controls=""><source src="N-S2/baseline_1.wav"></audio></td>
+          <td><audio controls=""><source src="N-S2/baseline_2.wav"></audio></td>
+          <td><audio controls=""><source src="N-S2/baseline_3.wav"></audio></td>
+        </tr>
+        <tr>
+          <td nowrap="">Proposed-VC (10% supervision)</td>
+          <td><audio controls=""><source src="N-S2/proposal_0.wav"></audio></td>
+          <td><audio controls=""><source src="N-S2/proposal_1.wav"></audio></td>
+          <td><audio controls=""><source src="N-S2/proposal_2.wav"></audio></td>
+          <td><audio controls=""><source src="N-S2/proposal_3.wav"></audio></td>
+        </tr>
+      </tbody></table>
+
+      <a name="vc.sample"><h3>neutral-to-angry</h3></a>
+       <table>
+        <tbody>
+        <tr>
+          <td nowrap="">Source</td>
+          <td><audio controls=""><source src="N-A/source_0.wav"></audio></td>
+          <td><audio controls=""><source src="N-A/source_1.wav"></audio></td>
+          <td><audio controls=""><source src="N-A/source_2.wav"></audio></td>
+          <td><audio controls=""><source src="N-A/source_3.wav"></audio></td>
+        <tr>
+        <tr>
+          <td nowrap="">Target</td>
+          <td><audio controls=""><source src="N-A/target_0.wav"></audio></td>
+          <td><audio controls=""><source src="N-A/target_1.wav"></audio></td>
+          <td><audio controls=""><source src="N-A/target_2.wav"></audio></td>
+          <td><audio controls=""><source src="N-A/target_3.wav"></audio></td>
+        </tr>
+        <tr>
+          <td nowrap="">PPG-VC</td>
+          <td><audio controls=""><source src="N-A/baseline_0.wav"></audio></td>
+          <td><audio controls=""><source src="N-A/baseline_1.wav"></audio></td>
+          <td><audio controls=""><source src="N-A/baseline_2.wav"></audio></td>
+          <td><audio controls=""><source src="N-A/baseline_3.wav"></audio></td>
+        </tr>
+        <tr>
+          <td nowrap="">Proposed-VC (10% supervision)</td>
+          <td><audio controls=""><source src="N-A/proposal_0.wav"></audio></td>
+          <td><audio controls=""><source src="N-A/proposal_1.wav"></audio></td>
+          <td><audio controls=""><source src="N-A/proposal_2.wav"></audio></td>
+          <td><audio controls=""><source src="N-A/proposal_3.wav"></audio></td>
+        </tr>
+      </tbody></table>
+
+    </div>
+
+</body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>
